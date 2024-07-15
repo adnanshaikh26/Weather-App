@@ -5,7 +5,8 @@ function App() {
   const [data, setData] = useState({});
   const [backgroundImg, setBackgroundImg] = useState("default-bg");
   const [location, setLocation] = useState("");
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=252394c06c5f28ba85fb9ace47779950`;
+  const key = process.env.REACT_APP_API_KEY;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${key}`;
 
   const searchLocation = async (event) => {
     if (event.key === "Enter") {
